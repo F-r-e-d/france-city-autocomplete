@@ -1,0 +1,31 @@
+{
+  "name": "france-municipalities-autocomplete",
+  "version": "0.1.7",
+  "peerDependencies": {
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@ionic/angular": "^7.1.0",
+    "uuid": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/F-r-e-d/france-city-autocomplete"
+  },
+  "dependencies": {
+    "tslib": "^2.5.3"
+  },
+  "devDependencies": {
+    "@ionic/angular": "^7.1.0",
+    "@types/uuid": "^9.0.2",
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript"
+  },
+   "scripts": {
+    "build": "ng build && tsc -p tsconfig.schematics.json",
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/france-municipalities-autocomplete"
+  },
+  "schematics": "./schematics/collection.json",
+  "ng-add": {
+    "save": "devDependencies"
+  }
+}

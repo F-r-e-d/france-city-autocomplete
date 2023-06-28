@@ -1,0 +1,37 @@
+
+<div class="bg_transparent">
+
+  <ion-item [button]="true" [detail]="false" [id]="'select-'+uuid" class="--bg_transparent">
+  <ion-input readonly="true"
+      [label]="title"
+      labelPlacement="floating" [ngModel]="selectedItem.code_postal ?
+      selectedItem.code_postal + ' - ' + selectedItem.nom_de_la_commune : ''"></ion-input>
+    <ion-icon name="chevron-down-outline"></ion-icon>
+  </ion-item>
+</div>
+
+<ion-modal [trigger]="'select-'+uuid" #modal class="modal-window" (didPresent)="focusSearchbar()">
+  <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancelChanges()">Annuler</ion-button>
+          </ion-buttons>
+          <ion-title>{{ title }}</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+         <ion-searchbar #searchbar (ionInput)="onSearchChange($event.target['value'])" placeholder="Code postal / commune"></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content color="light" class="ion-padding mb_50" *ngIf="query">
+        <ion-list id="modal-list" [inset]="true">
+          <ion-item *ngFor="let item of (filteredItems|limit:30); trackBy: trackItems">
+            <ion-item button detail="false" (click)="valueSelected(item)" class="w_100">
+              <div [innerHTML]="highlightText(item.code_postal) + ' - ' + highlightText(item.nom_de_la_commune)"></div>
+            </ion-item>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+  </ng-template>
+</ion-modal>
