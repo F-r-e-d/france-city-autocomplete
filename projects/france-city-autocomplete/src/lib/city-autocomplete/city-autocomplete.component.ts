@@ -15,12 +15,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { POSTAL_CODES } from '../../assets/datas/postalCodes';
 
 @Component({
-  selector: 'france-municipalities-autocomplete',
-  templateUrl: './municipalities-autocomplete.component.html',
-  styleUrls: ['./municipalities-autocomplete.component.css'],
+  selector: 'france-city-autocomplete',
+  templateUrl: './city-autocomplete.component.html',
+  styleUrls: ['./city-autocomplete.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class MunicipalitiesAutocompleteComponent implements OnInit {
+export class CityAutocompleteComponent implements OnInit {
 
   @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
   @Input() title: string = 'Code postal - commune';

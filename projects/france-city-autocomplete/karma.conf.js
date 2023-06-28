@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../coverage/france-municipalities-autocomplete'),
+      dir: require('path').join(__dirname, '../../coverage/france-city-autocomplete'),
       subdir: '.',
       reporters: [
         { type: 'html' },

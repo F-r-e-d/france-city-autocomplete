@@ -8,23 +8,23 @@
     }
   },
   "projects": {
-     "franceMunicipalitiesAutocomplete": {
+     "franceCityAutocomplete": {
       "projectType": "library",
-      "root": "projects/france-municipalities-autocomplete",
-      "sourceRoot": "projects/france-municipalities-autocomplete/src",
+      "root": "projects/france-city-autocomplete",
+      "sourceRoot": "projects/france-city-autocomplete/src",
       "prefix": "dev",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/france-municipalities-autocomplete/ng-package.json"
+            "project": "projects/france-city-autocomplete/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/france-municipalities-autocomplete/tsconfig.lib.prod.json"
+              "tsConfig": "projects/france-city-autocomplete/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/france-municipalities-autocomplete/tsconfig.lib.json"
+              "tsConfig": "projects/france-city-autocomplete/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -32,9 +32,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/france-municipalities-autocomplete/src/test.ts",
-            "tsConfig": "projects/france-municipalities-autocomplete/tsconfig.spec.json",
-            "karmaConfig": "projects/france-municipalities-autocomplete/karma.conf.js"
+            "main": "projects/france-city-autocomplete/src/test.ts",
+            "tsConfig": "projects/france-city-autocomplete/tsconfig.spec.json",
+            "karmaConfig": "projects/france-city-autocomplete/karma.conf.js"
           }
         }
       }

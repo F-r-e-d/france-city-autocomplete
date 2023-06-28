@@ -1,6 +1,6 @@
 {
-  "name": "france-municipalities-autocomplete",
-  "version": "0.1.7",
+  "name": "france-city-autocomplete",
+  "version": "0.1.8",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0",
@@ -22,7 +22,7 @@
   },
    "scripts": {
     "build": "ng build && tsc -p tsconfig.schematics.json",
-    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/france-municipalities-autocomplete"
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/france-city-autocomplete"
   },
   "schematics": "./schematics/collection.json",
   "ng-add": {

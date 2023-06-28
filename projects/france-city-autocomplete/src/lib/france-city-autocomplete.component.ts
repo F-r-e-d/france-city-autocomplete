@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'franceMunicipalitiesAutocomplete',
+  selector: 'franceCityAutocomplete',
   template: ``,
   styles: [
   ]
 })
-export class FranceMunicipalitiesAutocompleteComponent implements OnInit {
+export class FranceCityAutocompleteComponent implements OnInit {
 
   constructor() { }
 

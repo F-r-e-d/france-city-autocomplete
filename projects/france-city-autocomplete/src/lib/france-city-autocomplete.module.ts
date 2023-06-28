@@ -1,11 +1,11 @@
 import { InjectionToken, ModuleWithProviders, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FranceMunicipalitiesAutocompleteComponent } from './france-municipalities-autocomplete.component';
-import { MunicipalitiesAutocompleteComponent } from './municipalities-autocomplete/municipalities-autocomplete.component';
+import { FranceCityAutocompleteComponent } from './france-city-autocomplete.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FranceMunicipalitiesAutocompleteService } from './france-municipalities-autocomplete.service';
+import { FranceCityAutocompleteService } from './france-city-autocomplete.service';
 import { LimitPipe } from './pipes/limit/limit.pipe';
 import { FormsModule } from '@angular/forms';
+import { CityAutocompleteComponent } from './city-autocomplete/city-autocomplete.component';
 
 export interface LibConfig {
   apiUrl: string;
@@ -15,8 +15,8 @@ export const LibConfigService = new InjectionToken<LibConfig>('LibConfig');
 
 @NgModule({
   declarations: [
-    FranceMunicipalitiesAutocompleteComponent,
-    MunicipalitiesAutocompleteComponent,
+    FranceCityAutocompleteComponent,
+    CityAutocompleteComponent,
     LimitPipe
   ],
   imports: [
@@ -25,18 +25,17 @@ export const LibConfigService = new InjectionToken<LibConfig>('LibConfig');
     FormsModule
   ],
   exports: [
-    FranceMunicipalitiesAutocompleteComponent,
-    MunicipalitiesAutocompleteComponent
-
+    FranceCityAutocompleteComponent,
+    CityAutocompleteComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class FranceMunicipalitiesAutocompleteModule {
+export class FranceCityAutocompleteModule {
   static forRoot(config: LibConfig): ModuleWithProviders<any> {
     return {
-      ngModule: FranceMunicipalitiesAutocompleteModule,
+      ngModule: FranceCityAutocompleteModule,
       providers: [
-        FranceMunicipalitiesAutocompleteService,
+        FranceCityAutocompleteService,
         {
           provide: LibConfigService,
           useValue: config

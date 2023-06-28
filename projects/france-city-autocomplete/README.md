@@ -40,4 +40,3 @@ public city = {};
 - title (optional): string => (name of label input)
     default : Code postal - commune
 
-
